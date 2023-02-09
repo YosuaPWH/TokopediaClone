@@ -1,27 +1,30 @@
 package com.yosuahaloho.tokopediaclone.ui.login
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.yosuahaloho.tokopediaclone.R
 import com.yosuahaloho.tokopediaclone.databinding.ActivityLoginBinding
-import com.yosuahaloho.tokopediaclone.util.Prefs
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
+    private val viewModel: LoginViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setData()
+    }
 
-//        val btnBack: Button = findViewById(R.id.btnBack)
-//
-//        btnBack.setOnClickListener {
-////            val prefs = Prefs(this)
-////            prefs.setIsLogin(false)
-//            onBackPressed()
-//        }
+    fun setData() {
+        viewModel.text.observe(this) {
+            binding.edtEmail.setText(it)
+        };
+
+        binding.btnMasuk.setOnClickListener {
+            viewModel.ubahData()
+        }
     }
 }
