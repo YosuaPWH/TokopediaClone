@@ -56,6 +56,7 @@
         android:layout_height="@dimen/_45sdp"
         android:text="Masuk"
         android:textStyle="bold"
+        android:enabled="false"
         android:textAllCaps="false"
         android:textSize="@dimen/_13sdp"
         app:cornerRadius="@dimen/_5sdp" />
@@ -127,5 +128,12 @@
             android:textColor="@color/colorPrimary"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
 </LinearLayout>

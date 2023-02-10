@@ -1,6 +1,7 @@
 package com.yosuahaloho.tokopediaclone.core.data.source.remote.network
 
 import com.google.gson.GsonBuilder
+import com.yosuahaloho.tokopediaclone.util.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL = "http://127.0.0.1:8000/api/"
+    private const val BASE_URL = Constants.BASE_URL + "api/"
 
     val instance: ApiService by lazy {
         val gson = GsonBuilder()
@@ -29,12 +30,13 @@ object ApiConfig {
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
 
         retrofit.create(ApiService::class.java)
     }
+
 //    private val client: Retrofit
 //        get() {
 //            val interceptor = HttpLoggingInterceptor()
