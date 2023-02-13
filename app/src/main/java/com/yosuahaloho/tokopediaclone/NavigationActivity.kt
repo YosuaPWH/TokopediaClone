@@ -6,12 +6,10 @@ import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.yosuahaloho.tokopediaclone.databinding.ActivityNavigationBinding
 import com.yosuahaloho.tokopediaclone.ui.login.LoginActivity
-import com.yosuahaloho.tokopediaclone.util.Prefs
+import com.yosuahaloho.tokopediaclone.util.LoginPrefs
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -38,7 +36,7 @@ class NavigationActivity : AppCompatActivity() {
 
         navView.setOnItemSelectedListener {
             if (it.itemId == R.id.navigation_keranjang) {
-                val pref = Prefs(this)
+                val pref = LoginPrefs(this)
                 if (pref.getIsLogin()) {
                     Log.i("login", "Sudah login")
                     navController.navigate(it.itemId)

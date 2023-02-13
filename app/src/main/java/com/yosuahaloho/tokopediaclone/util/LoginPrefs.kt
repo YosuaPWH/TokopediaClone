@@ -1,16 +1,15 @@
 package com.yosuahaloho.tokopediaclone.util
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 
-class Prefs(activity: Activity) {
+class LoginPrefs(context: Context) {
 
     private var sp: SharedPreferences? = null
     private val login = "login"
 
     init {
-        sp = activity.getSharedPreferences("MYPREF", Context.MODE_PRIVATE)
+        sp = context.getSharedPreferences("MYPREF", Context.MODE_PRIVATE)
     }
 
     fun setIsLogin(value: Boolean) {

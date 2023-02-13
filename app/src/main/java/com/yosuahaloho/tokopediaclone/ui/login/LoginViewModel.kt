@@ -1,5 +1,6 @@
 package com.yosuahaloho.tokopediaclone.ui.login
 
+import android.app.Activity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,6 +18,6 @@ class LoginViewModel(private val repo: AppRepository) : ViewModel() {
         _text.postValue("Percobaan yosua")
     }
 
-    fun login(username: String, password: String) = repo.login(username, password).asLiveData()
+    fun login(activity: Activity, username: String, password: String) = repo.login(activity, username, password).asLiveData()
 
 }

@@ -18,10 +18,11 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.yosuahaloho.tokopediaclone.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_account"
+        android:name="com.yosuahaloho.tokopediaclone.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+
     <fragment
         android:id="@+id/navigation_keranjang"
         android:name="com.yosuahaloho.tokopediaclone.ui.keranjang.KeranjangFragment"

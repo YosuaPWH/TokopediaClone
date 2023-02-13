@@ -1,5 +1,6 @@
 package com.yosuahaloho.tokopediaclone.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextWatcher
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.textfield.TextInputLayout
+import com.yosuahaloho.tokopediaclone.NavigationActivity
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.network.State
 import com.yosuahaloho.tokopediaclone.databinding.ActivityLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -48,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun login() {
         viewModel.login(
+            this,
             binding.edtEmail.text.toString(),
             binding.edtPassword.text.toString()
         ).observe(this) {
@@ -55,6 +58,7 @@ class LoginActivity : AppCompatActivity() {
                 State.SUCCESS -> {
                     binding.pb.visibility = View.GONE
                     Toast.makeText(this, "Selamat datang ${it.data?.name}", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, NavigationActivity::class.java))
                 }
                 State.LOADING -> {
                     binding.pb.visibility = View.VISIBLE
