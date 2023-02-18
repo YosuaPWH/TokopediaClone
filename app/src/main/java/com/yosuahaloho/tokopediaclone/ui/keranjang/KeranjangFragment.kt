@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yosuahaloho.tokopediaclone.NavigationActivity
 import com.yosuahaloho.tokopediaclone.databinding.FragmentKeranjangBinding
 import com.yosuahaloho.tokopediaclone.util.LoginPrefs
+import com.yosuahaloho.tokopediaclone.util.UserPrefs
 
 class KeranjangFragment : Fragment() {
 
@@ -45,6 +46,9 @@ class KeranjangFragment : Fragment() {
             val pref = LoginPrefs(requireContext())
 
             pref.setIsLogin(false)
+
+            val userPref = UserPrefs(requireContext())
+            userPref.setUser(null)
 
             startActivity(Intent(context, NavigationActivity::class.java))
 

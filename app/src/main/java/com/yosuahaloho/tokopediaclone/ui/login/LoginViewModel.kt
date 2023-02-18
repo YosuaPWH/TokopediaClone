@@ -9,15 +9,15 @@ import com.yosuahaloho.tokopediaclone.core.data.repository.AppRepository
 
 class LoginViewModel(private val repo: AppRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
+//    private val _text = MutableLiveData<String>().apply {
+//        value = "This is home Fragment"
+//    }
+//    val text: LiveData<String> = _text
+//
+//    fun ubahData() {
+//        _text.postValue("Percobaan yosua")
+//    }
 
-    fun ubahData() {
-        _text.postValue("Percobaan yosua")
-    }
-
-    fun login(activity: Activity, username: String, password: String) = repo.login(activity, username, password).asLiveData()
+    fun login(activity: Activity, email: String, password: String) = repo.login(activity, email, password).asLiveData()
 
 }

@@ -14,12 +14,12 @@ class UserPrefs(context: Context) {
         sp = context.getSharedPreferences("User", Context.MODE_PRIVATE)
     }
 
-    fun setUser(data: User) {
+    fun setUser(data: User?) {
         val gson = Gson()
         sp!!.edit().putString(user, gson.toJson(data)).apply()
     }
 
-    fun getUser(): User {
+    fun getUser(): User? {
         val user = sp!!.getString(user, "")
         return Gson().fromJson(user, User::class.java)
     }

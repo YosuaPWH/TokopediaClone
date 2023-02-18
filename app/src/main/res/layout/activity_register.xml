@@ -16,6 +16,22 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/white"
+                android:hint="Nama Lengkap"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -23,6 +39,22 @@
                 android:background="@color/white"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Phone"
+                android:background="@color/white"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
 
@@ -46,72 +78,17 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginVertical="@dimen/_15sdp"
-            android:text="Lupa kata sandi?"
-            android:textColor="@color/colorPrimary" />
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_masuk"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:enabled="false"
-            android:text="Masuk"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Register"
             android:textAllCaps="false"
             android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
             app:cornerRadius="@dimen/_5sdp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/_15sdp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@id/text1"
-                android:background="#D3D3D3" />
-
-            <TextView
-                android:id="@+id/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/_15sdp"
-                android:text="atau masuk dengan"
-                android:textSize="@dimen/_11ssp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/text1"
-                android:background="#D3D3D3" />
-
-        </RelativeLayout>
-
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="@dimen/_45sdp"
-            android:paddingStart="@dimen/_4sdp"
-            android:paddingEnd="@dimen/_37sdp"
-            android:text="Google"
-            android:textAllCaps="false"
-            android:textColor="#939393"
-            android:textSize="@dimen/_13sdp"
-            android:textStyle="bold"
-            app:cornerRadius="@dimen/_5sdp"
-            app:icon="@drawable/icon_google"
-            app:iconSize="@dimen/_30sdp"
-            app:iconTint="@null" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,14 +101,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_3sdp"
-                android:text="Belum punya akun?" />
+                android:text="Dengan mendaftar, saya menyetujui" />
 
             <TextView
-                android:id="@+id/goto_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Daftar"
+                android:text="Syarat dan Ketentuan"
                 android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="serta " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Kebijakan Privasi" />
 
         </LinearLayout>
 

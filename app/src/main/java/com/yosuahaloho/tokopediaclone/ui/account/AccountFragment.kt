@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.yosuahaloho.tokopediaclone.databinding.FragmentAccountBinding
+import com.yosuahaloho.tokopediaclone.util.UserPrefs
 
 class AccountFragment : Fragment() {
 
@@ -28,7 +29,20 @@ class AccountFragment : Fragment() {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        setUser()
         return root
+    }
+
+    private fun setUser() {
+        val dataUser = UserPrefs(requireContext()).getUser()
+        if (dataUser != null) {
+            binding.apply {
+                tvName.text = dataUser.name
+                tvEmail.text = dataUser.email
+                tvPhone.text = dataUser.phone
+            }
+        }
+
     }
 
     override fun onDestroyView() {

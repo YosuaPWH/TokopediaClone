@@ -5,11 +5,14 @@ import com.yosuahaloho.tokopediaclone.ui.home.HomeViewModel
 import com.yosuahaloho.tokopediaclone.ui.keranjang.KeranjangViewModel
 import com.yosuahaloho.tokopediaclone.ui.login.LoginViewModel
 import com.yosuahaloho.tokopediaclone.ui.account.AccountViewModel
+import com.yosuahaloho.tokopediaclone.ui.register.RegisterViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { LoginViewModel(get()) }
+
+    viewModel { RegisterViewModel(get()) }
 
     viewModel { DashboardViewModel() }
 

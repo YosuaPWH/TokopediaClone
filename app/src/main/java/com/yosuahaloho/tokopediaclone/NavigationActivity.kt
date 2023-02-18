@@ -42,7 +42,8 @@ class NavigationActivity : AppCompatActivity() {
                     navController.navigate(it.itemId)
 
                 } else {
-                    startActivity(Intent(this, LoginActivity::class.java))
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
                 }
 
             } else {
@@ -53,4 +54,11 @@ class NavigationActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
+
+//    override fun onBackPressed() {
+//        if (LoginPrefs(this).getIsLogin()) {
+//            finishAffinity()
+//            finish()
+//        }
+//    }
 }
