@@ -13,5 +13,15 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="image_clickable">
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+    
+    <style name="AppTheme.ProgressBar">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
     
 </resources>

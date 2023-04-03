@@ -1,28 +1,31 @@
 package com.yosuahaloho.tokopediaclone.core.data.source.remote.network
 
+import com.yosuahaloho.tokopediaclone.core.data.source.remote.request.LoginRequest
+import com.yosuahaloho.tokopediaclone.core.data.source.remote.request.RegisterRequest
+import com.yosuahaloho.tokopediaclone.core.data.source.remote.request.UpdateProfileRequest
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.response.LoginResponse
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.response.RegisterResponse
-import okhttp3.RequestBody
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Body
 import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
 
 interface ApiService {
 
-    @FormUrlEncoded
     @POST("login")
     suspend fun login(
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body login: LoginRequest
     ) : Response<LoginResponse>
 
-    @FormUrlEncoded
     @POST("register")
     suspend fun register(
-        @Field("name") nama: String,
-        @Field("email") email: String,
-        @Field("phone") phone: String,
-        @Field("password") password: String
+        @Body register: RegisterRequest
     ) : Response<RegisterResponse>
+
+    @PUT("update-profile/{id}")
+    suspend fun updateProfile(
+        @Path("id") id: Int,
+        @Body updateProfile: UpdateProfileRequest
+    ) : Response<LoginResponse>
 }

@@ -20,4 +20,9 @@
     <color name="colorPrimary_700">#008e00</color>
     <color name="colorPrimary_800">#008e00</color>
 
+    <color name="shimmer">#A4ECECEC</color>
+    <color name="red">#ff0000</color>
+    <color name="transparant">#C4000000</color>
+
+
 </resources>

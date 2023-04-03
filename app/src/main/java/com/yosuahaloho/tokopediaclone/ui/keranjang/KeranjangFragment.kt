@@ -39,21 +39,6 @@ class KeranjangFragment : Fragment() {
         return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.btnLogout.setOnClickListener {
-            val pref = LoginPrefs(requireContext())
-
-            pref.setIsLogin(false)
-
-            val userPref = UserPrefs(requireContext())
-            userPref.setUser(null)
-
-            startActivity(Intent(context, NavigationActivity::class.java))
-
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

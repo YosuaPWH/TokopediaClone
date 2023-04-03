@@ -1,13 +1,16 @@
 package com.yosuahaloho.tokopediaclone.ui.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.yosuahaloho.tokopediaclone.NavigationActivity
 import com.yosuahaloho.tokopediaclone.databinding.FragmentAccountBinding
+import com.yosuahaloho.tokopediaclone.ui.updateProfile.UpdateProfileActivity
+import com.yosuahaloho.tokopediaclone.util.LoginPrefs
 import com.yosuahaloho.tokopediaclone.util.UserPrefs
 
 class AccountFragment : Fragment() {
@@ -30,8 +33,27 @@ class AccountFragment : Fragment() {
         val root: View = binding.root
 
         setUser()
+        setButton()
+
         return root
     }
+
+    private fun setButton() {
+        binding.btnLogout.setOnClickListener {
+            val pref = LoginPrefs(requireContext())
+            pref.setIsLogin(false)
+
+            val userPref = UserPrefs(requireContext())
+            userPref.setUser(null)
+
+            startActivity(Intent(context, NavigationActivity::class.java))
+        }
+
+        binding.btnEditProfile.setOnClickListener {
+            startActivity(Intent(context, UpdateProfileActivity::class.java))
+        }
+    }
+
 
     private fun setUser() {
         val dataUser = UserPrefs(requireContext()).getUser()

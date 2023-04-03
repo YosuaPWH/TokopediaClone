@@ -65,4 +65,9 @@ dependencies {
     implementation 'io.insert-koin:koin-android:2.2.2'
     implementation 'io.insert-koin:koin-androidx-viewmodel:2.2.2'
 
+    // Data Store
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    // MyHelper
+    implementation 'com.github.TistoW:MyHelper:1.1.15'
 }
