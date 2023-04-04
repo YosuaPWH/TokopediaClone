@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:background="@color/white"
         android:fitsSystemWindows="true">
@@ -22,19 +22,53 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/_3sdp"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_image"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_below="@id/appbar"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            app:cardCornerRadius="@dimen/_40sdp">
+
+            <ImageView
+                android:id="@+id/iv_profil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:contentDescription="@string/foto_profil" />
+
+            <TextView
+                android:id="@+id/tv_inisial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/inisial"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_15sdp"
-        android:layout_below="@id/appbar"
+        android:layout_below="@id/layout_image"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -48,7 +82,7 @@
                 android:background="@color/white"
                 android:hint="@string/nama_lengkap"
                 android:paddingStart="0dp"
-                android:paddingEnd="0dp"/>
+                android:paddingEnd="0dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,7 +99,7 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="0dp"
-                android:paddingEnd="0dp"/>
+                android:paddingEnd="0dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,10 +110,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_phone"
                 android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:hint="@string/phone"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/white"
+                android:hint="@string/phone"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
 
@@ -89,8 +123,8 @@
             android:id="@+id/btn_simpan"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:enabled="false"
             android:layout_marginTop="@dimen/_15sdp"
+            android:enabled="false"
             android:text="@string/simpan"
             android:textAllCaps="false"
             android:textSize="@dimen/_13sdp"
@@ -104,18 +138,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:background="@color/shimmer"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:layout_alignParentEnd="true"
+        android:background="@color/shimmer"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?android:attr/progressBarStyle"
             android:layout_gravity="center_horizontal"
-            android:theme="@style/AppTheme.ProgressBar"/>
+            android:theme="@style/AppTheme.ProgressBar" />
 
     </LinearLayout>
 

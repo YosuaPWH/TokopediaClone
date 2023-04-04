@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yosuahaloho.tokopediaclone.NavigationActivity
 import com.yosuahaloho.tokopediaclone.databinding.FragmentAccountBinding
 import com.yosuahaloho.tokopediaclone.ui.updateProfile.UpdateProfileActivity
+import com.yosuahaloho.tokopediaclone.util.Extension.getInisial
 import com.yosuahaloho.tokopediaclone.util.LoginPrefs
 import com.yosuahaloho.tokopediaclone.util.UserPrefs
 
@@ -62,6 +63,7 @@ class AccountFragment : Fragment() {
                 tvName.text = dataUser.name
                 tvEmail.text = dataUser.email
                 tvPhone.text = dataUser.phone
+                tvInisial.text = dataUser.name.getInisial()
             }
         }
 

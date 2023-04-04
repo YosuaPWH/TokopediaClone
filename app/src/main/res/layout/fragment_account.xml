@@ -13,12 +13,29 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:contentDescription="@string/foto_profil"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
             android:layout_gravity="center"
-            android:src="@drawable/baseline_account_circle_24" />
+            app:cardCornerRadius="@dimen/_30sdp">
+
+            <ImageView
+                android:id="@+id/iv_profil_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:contentDescription="@string/foto_profil" />
+
+            <TextView
+                android:id="@+id/tv_inisial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/inisial"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -57,20 +74,12 @@
 
         <ImageView
             android:id="@+id/btn_edit_profile"
+            style="@style/image_clickable"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            style="@style/image_clickable"
             android:layout_gravity="center"
-            android:src="@drawable/baseline_edit_24"
-            android:contentDescription="@string/edit" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+            android:contentDescription="@string/edit"
+            android:src="@drawable/baseline_edit_24" />
 
     </LinearLayout>
 
@@ -79,9 +88,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/logout"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>
