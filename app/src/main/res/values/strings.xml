@@ -4,4 +4,15 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="foto_profil">Foto Profil</string>
+    <string name="yosua_putra_wisesa_haloho">Yosua Putra Wisesa Haloho</string>
+    <string name="_0812345">0812345</string>
+    <string name="email_gmail_com">email@gmail.com</string>
+    <string name="edit">Edit</string>
+    <string name="register">Register</string>
+    <string name="simpan">Simpan</string>
+    <string name="logout">Logout</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
 </resources>
