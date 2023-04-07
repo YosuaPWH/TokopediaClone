@@ -16,4 +16,10 @@
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="inisial">YH</string>
+    <string name="password">Password</string>
+    <string name="syarat_dan_ketentuan">Syarat dan Ketentuan</string>
+    <string name="dengan_mendaftar_saya_menyetujui">Dengan mendaftar, saya menyetujui</string>
+    <string name="serta">serta</string>
+    <string name="kebijakan_privasi">Kebijakan Privasi</string>
+    <string name="cari_produk_di_sini">Cari produk di sini</string>
 </resources>

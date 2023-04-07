@@ -5,10 +5,13 @@ import com.yosuahaloho.tokopediaclone.core.data.source.remote.request.RegisterRe
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.request.UpdateProfileRequest
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.response.LoginResponse
 import com.yosuahaloho.tokopediaclone.core.data.source.remote.response.RegisterResponse
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Part
 import retrofit2.http.Path
 
 interface ApiService {
@@ -27,5 +30,12 @@ interface ApiService {
     suspend fun updateProfile(
         @Path("id") id: Int,
         @Body updateProfile: UpdateProfileRequest
+    ) : Response<LoginResponse>
+
+    @Multipart
+    @POST("upload-image/{id}")
+    suspend fun uploadImage(
+        @Path("id") id: Int,
+        @Part dataImage: MultipartBody.Part? = null
     ) : Response<LoginResponse>
 }

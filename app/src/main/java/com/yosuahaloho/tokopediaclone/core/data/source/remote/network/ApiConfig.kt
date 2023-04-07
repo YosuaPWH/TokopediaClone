@@ -1,6 +1,7 @@
 package com.yosuahaloho.tokopediaclone.core.data.source.remote.network
 
 import com.google.gson.GsonBuilder
+import com.yosuahaloho.tokopediaclone.BuildConfig
 import com.yosuahaloho.tokopediaclone.util.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,12 +12,16 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL = Constants.BASE_URL + "api/"
+    private val BASE_URL = if (BuildConfig.DEBUG) {
+        Constants.BASE_URL
+    } else {
+        Constants.ONLINE_URL
+    } + "api/"
 
     val instance: ApiService by lazy {
-        val gson = GsonBuilder()
-            .setLenient()
-            .create()
+//        val gson = GsonBuilder()
+//            .setLenient()
+//            .create()
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY

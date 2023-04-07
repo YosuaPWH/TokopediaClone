@@ -18,7 +18,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_nama"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/white"
                 android:hint="@string/nama_lengkap"
@@ -34,7 +34,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/white"
                 android:hint="@string/email"
@@ -52,7 +52,7 @@
                 android:id="@+id/edt_phone"
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="wrap_content"
                 android:hint="@string/phone"
                 android:background="@color/white"
                 android:paddingStart="0dp"
@@ -63,15 +63,15 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/white"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
@@ -84,7 +84,7 @@
             android:layout_height="@dimen/_45sdp"
             android:enabled="false"
             android:layout_marginTop="@dimen/_15sdp"
-            android:text="Register"
+            android:text="@string/register"
             android:textAllCaps="false"
             android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
@@ -101,12 +101,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_3sdp"
-                android:text="Dengan mendaftar, saya menyetujui" />
+                android:text="@string/dengan_mendaftar_saya_menyetujui" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Syarat dan Ketentuan"
+                android:lines="1"
+                android:text="@string/syarat_dan_ketentuan"
                 android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
@@ -120,13 +121,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="serta " />
+                android:text="@string/serta" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
-                android:text="Kebijakan Privasi" />
+                android:text="@string/kebijakan_privasi" />
 
         </LinearLayout>
 

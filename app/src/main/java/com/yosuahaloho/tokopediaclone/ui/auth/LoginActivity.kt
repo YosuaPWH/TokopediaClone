@@ -85,12 +85,10 @@ class LoginActivity : AppCompatActivity() {
                 }
                 State.ERROR -> {
                     binding.pb.visibility = View.GONE
-                    (it.message?.get(0).toString() == "User tidak ditemukan!").let { tr ->
-                        if (tr) {
-                            binding.edtEmail.getEditTextLayout().error = it.message?.get(0).toString()
-                        } else {
-                            binding.edtPassword.getEditTextLayout().error = it.message?.get(0).toString()
-                        }
+                    if (it.message.toString() == "User tidak ditemukan") {
+                        binding.edtEmail.getEditTextLayout().error = it.message.toString()
+                    } else {
+                        binding.edtPassword.getEditTextLayout().error = it.message.toString()
                     }
                     Toast.makeText(this, it.message?.get(0).toString(), Toast.LENGTH_SHORT).show()
                 }

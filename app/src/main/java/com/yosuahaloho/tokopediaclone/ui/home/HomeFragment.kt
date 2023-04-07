@@ -38,15 +38,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setData() {
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            binding.textHome.text = it
-        }
     }
 
     fun ubahData() {
-        binding.btnUbah.setOnClickListener {
-            homeViewModel.ubahData()
-        }
+
     }
 
     override fun onDestroyView() {

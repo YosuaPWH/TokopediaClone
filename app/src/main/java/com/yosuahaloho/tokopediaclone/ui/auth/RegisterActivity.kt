@@ -58,13 +58,12 @@ class RegisterActivity : AppCompatActivity() {
                     binding.pb.visibility = View.VISIBLE
                 }
                 State.ERROR -> {
-                    it.message!!.forEach {err ->
-                        if (err.contains("email")) {
-                            binding.edtEmail.getEditTextLayout().error = err
-                        } else if (err.contains("phone")) {
-                            binding.edtPhone.getEditTextLayout().error = err
-                        }
+                    if (it.message!!.contains("email")) {
+                        binding.edtEmail.getEditTextLayout().error = it.message
+                    } else {
+                        binding.edtPhone.getEditTextLayout().error = it.message
                     }
+
                     binding.pb.visibility = View.GONE
                     Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
                 }

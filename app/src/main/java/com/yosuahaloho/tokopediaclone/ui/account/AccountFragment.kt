@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.yosuahaloho.tokopediaclone.NavigationActivity
 import com.yosuahaloho.tokopediaclone.databinding.FragmentAccountBinding
 import com.yosuahaloho.tokopediaclone.ui.updateProfile.UpdateProfileActivity
+import com.yosuahaloho.tokopediaclone.util.Constants
+import com.yosuahaloho.tokopediaclone.util.Constants.STORAGE_USER
 import com.yosuahaloho.tokopediaclone.util.Extension.getInisial
 import com.yosuahaloho.tokopediaclone.util.LoginPrefs
 import com.yosuahaloho.tokopediaclone.util.UserPrefs
@@ -33,7 +37,6 @@ class AccountFragment : Fragment() {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        setUser()
         setButton()
 
         return root
@@ -63,10 +66,25 @@ class AccountFragment : Fragment() {
                 tvName.text = dataUser.name
                 tvEmail.text = dataUser.email
                 tvPhone.text = dataUser.phone
-                tvInisial.text = dataUser.name.getInisial()
+                if (dataUser.image != null) {
+                    tvInisial.text = null
+                    Glide
+                        .with(this@AccountFragment)
+                        .load(STORAGE_USER + dataUser.image)
+                        .centerCrop()
+                        .into(ivProfilAccount)
+                } else {
+                    tvInisial.text = dataUser.name.getInisial()
+                }
+
             }
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setUser()
     }
 
     override fun onDestroyView() {
