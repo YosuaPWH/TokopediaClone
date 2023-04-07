@@ -22,4 +22,7 @@
     <string name="serta">serta</string>
     <string name="kebijakan_privasi">Kebijakan Privasi</string>
     <string name="cari_produk_di_sini">Cari produk di sini</string>
+    <string name="dikirim_ke">Dikirim ke</string>
+    <string name="rewards">Rewards</string>
+    <string name="gopay">GoPay</string>
 </resources>

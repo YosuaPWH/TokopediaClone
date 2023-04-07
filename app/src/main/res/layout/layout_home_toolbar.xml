@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_45sdp"
-    android:background="@color/colorPrimary_400"
+    android:padding="@dimen/_5sdp"
+    android:background="@color/colorPrimary_tokped"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
@@ -13,7 +14,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_5sdp"
         android:background="@color/white"
-        app:cardCornerRadius="@dimen/_7sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/envelope"
@@ -26,8 +27,8 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:src="@drawable/ic_search" />

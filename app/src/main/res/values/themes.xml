@@ -23,5 +23,12 @@
     <style name="AppTheme.ProgressBar">
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
+
+    <style name="home_card_view">
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopLeft">@dimen/_10sdp</item>
+        <item name="cornerSizeTopRight">@dimen/_10sdp</item>
+    </style>
     
 </resources>
