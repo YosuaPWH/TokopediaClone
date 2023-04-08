@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.TokopediaClone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorPrimary">@color/colorPrimary_tokped</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary_tokped</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/colorPrimary_400</item>
+        <item name="colorSecondaryVariant">@color/colorPrimary_tokped</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>

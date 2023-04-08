@@ -24,6 +24,8 @@
     <color name="shimmer">#A4ECECEC</color>
     <color name="red">#ff0000</color>
     <color name="transparant">#C4000000</color>
+    
+    <color name="bg_red_diskon">#FFDCE2</color>
 
 
 </resources>

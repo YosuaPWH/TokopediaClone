@@ -1,13 +1,18 @@
 package com.yosuahaloho.tokopediaclone.ui.home
 
 import android.os.Bundle
+import android.transition.Slide
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager2.widget.ViewPager2
+import com.yosuahaloho.tokopediaclone.R
 import com.yosuahaloho.tokopediaclone.databinding.FragmentHomeBinding
+import com.yosuahaloho.tokopediaclone.ui.home.adapter.SlideImageViewAdapter
 
 class HomeFragment : Fragment() {
 
@@ -34,7 +39,20 @@ class HomeFragment : Fragment() {
 //        }
         setData()
         ubahData()
+        setUpViewPager()
         return root
+    }
+
+    private fun setUpViewPager() {
+        val imageList = listOf(
+            R.drawable.slider1,
+            R.drawable.slider2,
+            R.drawable.slider3
+        )
+        val ddw = SlideImageViewAdapter()
+        ddw.addItemImage(imageList)
+        binding.vpSlideHome.adapter = ddw
+        binding.vpSlideHome.setPadding(40, 0, 40, 0)
     }
 
     private fun setData() {
